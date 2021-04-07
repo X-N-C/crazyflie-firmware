@@ -106,7 +106,7 @@ void motorsInit(const MotorPerifDef** motorMapSelect)
 
   DEBUG_PRINT("Using %s motor driver\n", motorMap[0]->drvType == BRUSHED ? "brushed" : "brushless");
 
-  for (i = 0; i < NBR_OF_MOTORS; i++)
+  for (i = 0; i < NBR_OF_MOTORS+1; i++)
   {
     //Clock the gpio and the timers
     MOTORS_RCC_GPIO_CMD(motorMap[i]->gpioPerif, ENABLE);
