@@ -130,7 +130,7 @@ void systemInit(void)
 
   configblockInit();
   storageInit();
-  workerInit();
+  //workerInit();
   adcInit();
   ledseqInit();
   pmInit();
