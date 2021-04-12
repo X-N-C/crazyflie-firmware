@@ -202,32 +202,58 @@ void systemTask(void *arg)
 
   //Test the modules
   DEBUG_PRINT("About to run tests in system.c (one fail causes the following to fail).\n");
-  pass &= systemTest();
-  DEBUG_PRINT("system %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= configblockTest();
-  DEBUG_PRINT("configblock %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= storageTest();
-  DEBUG_PRINT("storage %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= commTest();
-  DEBUG_PRINT("comm %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= commanderTest();
-  DEBUG_PRINT("commander %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= stabilizerTest();
-  DEBUG_PRINT("stabilizer %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= estimatorKalmanTaskTest();
-  DEBUG_PRINT("estimatorKalmanTask %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= deckTest();
-  DEBUG_PRINT("deck %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= soundTest();
-  DEBUG_PRINT("sound %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= memTest();
-  DEBUG_PRINT("mem %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= watchdogNormalStartTest();
-  DEBUG_PRINT("watchdogNormalStart %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= cfAssertNormalStartTest();
-  DEBUG_PRINT("cfAssertNormalStart %s\n", pass ? "[OK]" : "[FAIL]");
-  pass &= peerLocalizationTest();
-  DEBUG_PRINT("peerLocalization %s\n", pass ? "[OK]" : "[FAIL]");
+  if (systemTest() == false) {
+    pass = false;
+    DEBUG_PRINT("system [FAIL]");
+  }
+  if (configblockTest() == false) {
+    pass = false;
+    DEBUG_PRINT("configblock [FAIL]");
+  }
+  if (storageTest() == false) {
+    pass = false;
+    DEBUG_PRINT("storage [FAIL]");
+  }
+  if (commTest() == false) {
+    pass = false;
+    DEBUG_PRINT("comm [FAIL]");
+  }
+  if (commanderTest() == false) {
+    pass = false;
+    DEBUG_PRINT("commander [FAIL]");
+  }
+  if (stabilizerTest() == false) {
+    pass = false;
+    DEBUG_PRINT("stabilizer [FAIL]");
+  }
+  if (estimatorKalmanTaskTest() == false) {
+    pass = false;
+    DEBUG_PRINT("estimatorKalmanTask [FAIL]");
+  }
+  if (deckTest() == false) {
+    pass = false;
+    DEBUG_PRINT("deck [FAIL]");
+  }
+  if (soundTest() == false) {
+    pass = false;
+    DEBUG_PRINT("sound [FAIL]");
+  }
+  if (memTest() == false) {
+    pass = false;
+    DEBUG_PRINT("mem [FAIL]");
+  }
+  if (watchdogNormalStartTest() == false) {
+    pass = false;
+    DEBUG_PRINT("watchdogNormalStart [FAIL]");
+  }
+  if (cfAssertNormalStartTest() == false) {
+    pass = false;
+    DEBUG_PRINT("cfAssertNormalStart [FAIL]");
+  }
+  if (peerLocalizationTest() == false) {
+    pass = false;
+    DEBUG_PRINT("peerLocalization [FAIL]");
+  }
 
   //Start the firmware
   if(pass)
