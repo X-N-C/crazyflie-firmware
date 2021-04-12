@@ -201,58 +201,58 @@ void systemTask(void *arg)
 #endif
 
   //Test the modules
-  DEBUG_PRINT("About to run tests in system.c (one fail causes the following to fail).\n");
+  DEBUG_PRINT("About to run tests in system.c.\n");
   if (systemTest() == false) {
     pass = false;
-    DEBUG_PRINT("system [FAIL]");
+    DEBUG_PRINT("system [FAIL]\n");
   }
   if (configblockTest() == false) {
     pass = false;
-    DEBUG_PRINT("configblock [FAIL]");
+    DEBUG_PRINT("configblock [FAIL]\n");
   }
   if (storageTest() == false) {
     pass = false;
-    DEBUG_PRINT("storage [FAIL]");
+    DEBUG_PRINT("storage [FAIL]\n");
   }
   if (commTest() == false) {
     pass = false;
-    DEBUG_PRINT("comm [FAIL]");
+    DEBUG_PRINT("comm [FAIL]\n");
   }
   if (commanderTest() == false) {
     pass = false;
-    DEBUG_PRINT("commander [FAIL]");
+    DEBUG_PRINT("commander [FAIL]\n");
   }
   if (stabilizerTest() == false) {
     pass = false;
-    DEBUG_PRINT("stabilizer [FAIL]");
+    DEBUG_PRINT("stabilizer [FAIL]\n");
   }
   if (estimatorKalmanTaskTest() == false) {
     pass = false;
-    DEBUG_PRINT("estimatorKalmanTask [FAIL]");
+    DEBUG_PRINT("estimatorKalmanTask [FAIL]\n");
   }
   if (deckTest() == false) {
     pass = false;
-    DEBUG_PRINT("deck [FAIL]");
+    DEBUG_PRINT("deck [FAIL]\n");
   }
   if (soundTest() == false) {
     pass = false;
-    DEBUG_PRINT("sound [FAIL]");
+    DEBUG_PRINT("sound [FAIL]\n");
   }
   if (memTest() == false) {
     pass = false;
-    DEBUG_PRINT("mem [FAIL]");
+    DEBUG_PRINT("mem [FAIL]\n");
   }
   if (watchdogNormalStartTest() == false) {
     pass = false;
-    DEBUG_PRINT("watchdogNormalStart [FAIL]");
+    DEBUG_PRINT("watchdogNormalStart [FAIL]\n");
   }
   if (cfAssertNormalStartTest() == false) {
     pass = false;
-    DEBUG_PRINT("cfAssertNormalStart [FAIL]");
+    DEBUG_PRINT("cfAssertNormalStart [FAIL]\n");
   }
   if (peerLocalizationTest() == false) {
     pass = false;
-    DEBUG_PRINT("peerLocalization [FAIL]");
+    DEBUG_PRINT("peerLocalization [FAIL]\n");
   }
 
   //Start the firmware
