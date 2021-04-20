@@ -128,7 +128,7 @@ void systemInit(void)
               *((int*)(MCU_ID_ADDRESS+8)), *((int*)(MCU_ID_ADDRESS+4)),
               *((int*)(MCU_ID_ADDRESS+0)), *((short*)(MCU_FLASH_SIZE_ADDRESS)));
 
-  configblockInit();
+  //configblockInit();
   storageInit();
   workerInit();
   adcInit();
