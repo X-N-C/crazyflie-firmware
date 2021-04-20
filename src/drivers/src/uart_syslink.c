@@ -263,7 +263,7 @@ void uartslkSendDataDmaBlocking(uint32_t size, uint8_t* data)
     /* Clear transfer complete */
     USART_ClearFlag(UARTSLK_TYPE, USART_FLAG_TC);
     /* Enable DMA USART TX Stream */
-    DMA_Cmd(UARTSLK_DMA_STREAM, ENABLE);
+    //DMA_Cmd(UARTSLK_DMA_STREAM, ENABLE);
     xSemaphoreTake(waitUntilSendDone, portMAX_DELAY);
     xSemaphoreGive(uartBusy);
   }
